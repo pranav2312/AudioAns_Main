@@ -1,0 +1,36 @@
+
+.list-item {
+    transition: all ease 0.2s;
+    background-color: rgba(255, 255, 255, 0.164);
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.list-item:hover { 
+    opacity: 0.85;
+}
+
+.list-ques {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(34, 34, 34) !important;
+}
+
+.times {
+    font-size: 13px;
+    margin-top: 15px;
+    color: rgb(68, 68, 68);
+}
+
+.times > span {
+    margin-right: 10px;
+}
+
+.is-answered {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    font-size: 13px;
+}

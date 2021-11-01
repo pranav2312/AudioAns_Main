@@ -1,0 +1,88 @@
+
+.ques-container {
+    margin: 30px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.164);
+    border-radius: 5px;
+    height: 90vh;
+}
+
+.ques-col {
+    width: 50%;
+    padding: 20px;
+    height: 100%;
+    position: relative;
+}
+
+.ques-col:first-child {
+    border-right: 1px solid rgb(156, 156, 156);
+}
+
+.ques-body, .ans-body {
+    margin-top: 60px;
+    text-align: center;
+    color: rgb(34, 34, 34);
+}
+
+.ques-body h2 {
+    margin-bottom: 20px;
+}
+
+.ques-img {
+    width: 80%;
+    margin: auto;
+}
+
+.ques-img > img {
+    max-width: 100%;
+    min-height: 100%;
+}
+
+.ans-text {
+    margin: 30px 0 ;
+}
+
+.audio-ctrl {
+    margin: 30px 0;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.tabs > p {
+    padding: 20px 10px 5px 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.active {
+    border-bottom: 3px solid rgb(34, 34, 34);
+}
+
+.save-btn, .created_time {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+}
+
+.saving, .saving:hover {
+    background-color: rgb(92, 189, 75) !important;
+}
+
+.backlink, .backlink-newques {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+}
+.backlink {
+    left: 10px;
+}
+.backlink-newques {
+    right: 10px;
+}

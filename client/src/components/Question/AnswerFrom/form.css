@@ -1,0 +1,43 @@
+.newans-form > h2 {
+    margin: 20px 0;
+    text-align: center;
+    padding: 5px 0 0 0;
+}
+
+.control-btns {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+button {
+    padding: 8px 25px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all ease 0.25s;
+}
+
+button:hover {
+    color: whitesmoke;
+    background-color: rgb(34, 34, 34);
+}
+
+.rec-time {
+    font-weight: bold;
+    color: rgb(34, 34, 34);
+    font-size: 20px;
+}
+
+textarea {
+    border-radius: 5px;
+    width: 70%;
+    height: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+    outline: none;
+    border: none;
+    resize: none;
+}
