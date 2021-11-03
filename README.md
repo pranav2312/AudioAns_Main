@@ -1,8 +1,5 @@
 # audioAns
 
-### Video
-
-[cache-prep.mkv](https://drive.google.com/file/d/1UDxsLIkTnXubVJa4Psuh272_opCA7X3C/view?usp=sharing)
 
 ### Instructions to run application on [localhost](http://localhost)
 
