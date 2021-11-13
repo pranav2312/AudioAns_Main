@@ -1,13 +1,15 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import MicRecorder from 'mic-recorder-to-mp3';
 import { saveAnswer } from '../../request'
 import './form.css';
+import { GlobalState } from '../../../GlobalState';
 const Mp3Recorder = new MicRecorder({ bitRate: 128 });
 
 
 const AnswerForm = ({ quesId, updateAnswer }) => {
-
+    const store = useContext(GlobalState)
+    const token = store.token
     const initRecState = {
         isRecording: false,
         isBlocked: false,
@@ -157,8 +159,8 @@ const AnswerForm = ({ quesId, updateAnswer }) => {
             const filename = new Date().toISOString()
             fd.append('ans_audio', newAnswer.ansAudio, filename)
         }
-
-        saveAnswer(quesId, fd)
+        if(token[0])
+        saveAnswer(quesId, fd,token)
             .then(res => {
                 console.log(res)
                 updateAnswer(res.data)

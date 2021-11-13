@@ -1,35 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+//import './index.css';
+import App from './App';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+//import reportWebVitals from './reportWebVitals';
 
-import App from './App'
-import Question from './components/Question'
-import QuestionList from './components/QuestionList'
-import NewQuestion from './components/NewQuestion'
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+//reportWebVitals();
 
-const routing = (
-  <Router>
-    <Switch>
-
-      <Route
-        exact path='/'
-        component={App}>
-      </Route>
-      <Route
-        exact path='/questions/:id'
-        component={Question}>
-      </Route>
-      <Route
-        exact path='/questions'
-        component={QuestionList}>
-      </Route>
-      <Route
-        exact path='/new_question'
-        component={NewQuestion}>
-      </Route>
-
-    </Switch>
-  </Router>
-)
-
-ReactDOM.render(routing, document.getElementById('root'));

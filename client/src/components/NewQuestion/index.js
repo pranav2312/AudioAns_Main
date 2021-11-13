@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { GlobalState } from "../../GlobalState";
 import { savNewQuestion } from "../request";
 import "./style.css";
 
@@ -10,7 +11,8 @@ function NewQuestion() {
     quesImg: null,
     saving: false,
   };
-
+  const store = useContext(GlobalState)
+  const token = store.token 
   const [state, setState] = useState(initState);
 
   const handleChange = (e) => {
@@ -46,8 +48,9 @@ function NewQuestion() {
     if (state.quesImg !== null && state.quesImg !== undefined) {
       fd.append("ques_image", state.quesImg[0]);
     }
-    console.log(fd);
-    savNewQuestion(fd)
+    console.log({access:`Bearer ${token[0]}`,fd:{...state}})
+    if(token[0])
+    savNewQuestion(fd,token)
       .then((res) => {
         setState((pr) => ({
           ...pr,

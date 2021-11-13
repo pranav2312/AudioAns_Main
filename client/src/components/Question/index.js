@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { getQuestion } from '../request'
 import AnswerForm from './AnswerFrom/Form'
 import dummyImg from '../Images/dummyImg.jpg'
 import './style.css'
+import { GlobalState } from '../../GlobalState'
 
 
 function Question() {
-
+    const store = useContext(GlobalState)
+    const token = store.token
     const { id } = useParams()
     const initState = {
         loading: true,
@@ -19,12 +21,13 @@ function Question() {
     const [showQues, setShowQues] = useState(true)
 
     useEffect(() => {
-        getQuestion(id)
+        if(token[0])
+        getQuestion(id,token)
             .then(res => {
                 updateState(res.data)
             })
             .catch(console.log)
-    }, [id])
+    }, [id,token])
 
     const updateState = (data) => {
         setState(pr => ({

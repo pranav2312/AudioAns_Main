@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { GlobalState } from '../../GlobalState'
 import { getQuestionList } from '../request'
 import ListItem from './ListItem/ListItem'
 import './style.css'
 
 function QuestionList() {
-
+    const store = useContext(GlobalState)
+    const token = store.token
     const initState = {
         loading: true,
         questions: []
@@ -15,7 +17,9 @@ function QuestionList() {
     const [state, setState] = useState(initState);
 
     useEffect(() => {
-        getQuestionList()
+        console.log({token})
+        if(token[0]){
+        getQuestionList(token)
             .then(res => {
                 setState(pr => ({
                     ...pr,
@@ -24,7 +28,8 @@ function QuestionList() {
                 }))
             })
             .catch(console.log)
-    }, [])
+        }
+    }, [token])
 
 
     return (
@@ -33,6 +38,12 @@ function QuestionList() {
                 <div style={{marginBottom: '15px'}}>
                     <i className="fa fa-chevron-left"></i>
                     Home
+                </div>
+            </Link>
+            <Link to="/new_question">
+                <div style={{marginBottom: '15px'}}>
+                    <i className="fa fa-chevron-right"></i>
+                    Add Question
                 </div>
             </Link>
             {
@@ -45,6 +56,7 @@ function QuestionList() {
                     )
 
             }
+            
         </div>
     )
 }
