@@ -1,8 +1,9 @@
+import axios from "axios";
 import React, { Component, useState } from "react";
 ///import './style.css'
 function Signup() {
     const [user,setUser] = useState({
-        email:'',password:'',first_name:'',last_name:''
+        username:'',password:'',first_name:'',last_name:''
     })
     const onChangeInpute = (e)=>{
         
@@ -10,10 +11,21 @@ function Signup() {
         setUser({...user,[name]:value})
         
     }
+    const SignupSubmit=async(e)=>{
+        e.preventDefault()
+        try{
+            console.log({...user})
+            await axios.post('http://127.0.0.1:8000/api/register/',{...user})
+            window.location.href = "/";
+        }
+        catch(err){
+            alert(err.response.data.msg)
+        }
+    }
         return (
             <div className="auth-wrapper">
             <div className="auth-inner">
-            <form>
+            <form onSubmit={SignupSubmit}>
                 <h3>Sign Up</h3>
 
                 <div className="form-group">
@@ -27,8 +39,8 @@ function Signup() {
                 </div>
 
                 <div className="form-group">
-                    <label>Email address</label>
-                    <input name="email" type="email" className="form-control" placeholder="Enter email" value={user.email} onChange={onChangeInpute}/>
+                    <label>Username</label>
+                    <input name="username" type="text" className="form-control" placeholder="Enter email" value={user.email} onChange={onChangeInpute}/>
                 </div>
 
                 <div className="form-group">

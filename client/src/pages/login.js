@@ -38,7 +38,7 @@ function Login() {
             <h3>Sign In</h3>
 
             <div className="form-group">
-                <label>Email address</label>
+                <label>Username</label>
                 <input name="username" type="text" className="form-control" placeholder="Enter email" value={user.username} onChange={onChangeInpute} />
             </div>
 
