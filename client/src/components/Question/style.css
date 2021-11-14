@@ -31,13 +31,15 @@
 }
 
 .ques-img {
-    width: 80%;
+    width: 300px;
     margin: auto;
+    height: 300px;
+    object-fit: contain;
 }
 
 .ques-img > img {
     max-width: 100%;
-    min-height: 100%;
+   
 }
 
 .ans-text {

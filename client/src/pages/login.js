@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useContext, useState } from "react";
 import { GlobalState } from "../GlobalState";
 import './style.css'
+//import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 function Login() {
     const store = useContext(GlobalState)
     const [token,setToken] = store.token

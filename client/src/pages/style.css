@@ -4,7 +4,9 @@
   box-sizing: border-box;
 }
 body {
-  background: #1C8EF9 !important;
+  background: #A770EF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   min-height: 100vh;
   display: flex;
   font-weight: 400;

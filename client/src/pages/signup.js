@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { Component, useState } from "react";
+//import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 ///import './style.css'
 function Signup() {
     const [user,setUser] = useState({
